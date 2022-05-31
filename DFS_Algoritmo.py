@@ -21,3 +21,21 @@ class Grafo():
         
         dfs(self, inicio, objetivo, ruta = [], visitado = set()), este método imprime el recorrido BFS de un vértice fuente dado.
     """
+    def __init__(self, numero_nodos, dirigido=True):
+        """
+        Este método hará la función de constuctor de la clase denominada 'Grafo()', en donde recepta el número de nodos (m_num_nodos), y posteriormente crea el rango de nodos (numero_nodos), a continuación, determina el tipo de grafo si es dirigido o no dirigido dependiendo del caso (m_dirigido) y para finalizar se creará el diccionario de la lista de adyacencia.
+
+        Atributos:
+        m_numero_nodos : int -----> Cantidad de nodos que contendrá el gráfo.
+        m_nodos : int -----> Rango de nodos en donde trabajará el gráfo.
+        m_dirigido : boolean ------> Tipo de nodo ya sea dirigido o no dirigido.
+        m_lista_adyacencia : diccionario ------> Diccionario que almacena el valor de los nodos de la lista de adyacencia. 
+        """
+        # Asignamos el valor del numero de nodos por medio del parámetro receptado.
+        self.m_numero_nodos = numero_nodos
+        # Se genera el rango de nodos en base a m_numero_nodos
+        self.m_nodos = range(self.m_numero_nodos)
+        # Se establece el tipo de grafo
+        self.m_dirigido = dirigido
+        # Se crea el diccionario respectivo de la lista de adyacencia
+        self.m_lista_adyacencia = {nodo: set() for nodo in self.m_nodos}
