@@ -39,3 +39,19 @@ class Grafo():
         self.m_dirigido = dirigido
         # Se crea el diccionario respectivo de la lista de adyacencia
         self.m_lista_adyacencia = {nodo: set() for nodo in self.m_nodos}
+        
+    def agregar_borde(self, nodo1, nodo2, peso=1):
+        
+        """
+        Este método define el borde respectivo de la lista de adyacencia, y recepta como parametros: el nodo1, el nodo2 y el peso que tiene un valor por defecto es de 1.
+        Posteriormente se agregan a la lista de adyacencia del nodo al que corresponde.
+
+        Parametros -----> nodo1 : int
+                          nodo2 : int
+                          peso: int
+        """
+        # Se agrega el nodo 2 a la lista de adyacencia del nodo 1.
+        self.m_lista_adyacencia[nodo1].add((nodo2, peso))
+        if not self.m_dirigido:
+            # Se agrega el nodo 1 a la lista de adyacencia del nodo 2.
+            self.m_lista_adyacencia[nodo2].add((nodo1, peso))
