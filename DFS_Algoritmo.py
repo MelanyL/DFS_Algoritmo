@@ -89,3 +89,59 @@ class Grafo():
                 
         ruta.pop() # elimina y retorna el elemento de la ruta
         return None 
+
+if __name__ == "__main__":
+    """
+    Dentro de la clase main se instancia a la clase Grafo para acceder a sus metodos.
+    Se crearan en este caso 5 casos de prueba para comprobar el funcionamiento del programa.
+    """
+    
+    print("Caso de Prueba 1")
+    grafo1 = Grafo(6, dirigido=False)#Se instancia la clase Grafo
+
+    grafo1.agregar_borde(0, 1) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo1.agregar_borde(0, 2) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo1.agregar_borde(0, 3) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo1.agregar_borde(2, 4) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo1.agregar_borde(2, 5) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+
+    grafo1.Imprimir_lista_adyacencia() #Imprime la lista de adyacencia
+
+    ruta_transversal1 = [] # Se inicializa la variable ruta_transversal
+    ruta_transversal1 = grafo1.dfs(0, 4) # Se almacena el recorrido dfs en la variable ruta_transversal
+    print(f"La ruta transversal desde el nodo 0 al nodo 4 es {ruta_transversal1}") #Imprime el recorriodo dfs
+
+
+    
+    print("Caso de Prueba 2")
+    grafo2 = Grafo(6, dirigido=False)#Se instancia la clase Grafo
+
+ 
+    grafo2.agregar_borde(0, 1) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo2.agregar_borde(1, 2) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo2.agregar_borde(1, 3) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo2.agregar_borde(3, 4) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo2.agregar_borde(3, 5) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+
+    grafo2.Imprimir_lista_adyacencia() #Imprime la lista de adyacencia
+
+    ruta_transversal2 = [] # Se inicializa la variable ruta_transversal
+    ruta_transversal2 = grafo2.dfs(0, 4) # Se almacena el recorrido dfs en la variable ruta_transversal
+    print(f"La ruta transversal desde el nodo 0 al nodo 4 es {ruta_transversal2}") #Imprime el recorriodo dfs
+
+
+    print("Caso de Prueba 3")
+    grafo3 = Grafo(4, dirigido=False)#Se instancia la clase Grafo
+
+ 
+    grafo3.agregar_borde(0, 1) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo3.agregar_borde(0, 2) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo3.agregar_borde(0, 3) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo3.agregar_borde(1, 2) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+    grafo3.agregar_borde(2, 3) # Se agrega los bordes del grafo con valor peso = 1 por defecto
+
+    grafo3.Imprimir_lista_adyacencia() #Imprime la lista de adyacencia
+
+    ruta_transversal3 = [] # Se inicializa la variable ruta_transversal
+    ruta_transversal3 = grafo3.dfs(2, 3) # Se almacena el recorrido dfs en la variable ruta_transversal
+    print(f"La ruta transversal desde el nodo 0 al nodo 4 es {ruta_transversal3}") #Imprime el recorriodo dfs
