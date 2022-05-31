@@ -64,3 +64,28 @@ class Grafo():
         for llave in self.m_lista_adyacencia.keys():
             # imprime cada nodo almacenado en la lista de adyacencia.
             print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
+
+    def dfs(self, inicio, objetivo, ruta = [], visitado = set()):
+        """
+        Este método imprime el recorrido dfs que se genera por medio de un nodo inicial y un nodo objetivo. Posteriormente, 
+        genera una lista de los nodos visitados y muestra el recorrido realizado hasta llegar al objetivo. 
+
+        Parametros: ----->ruta : lista
+                    ----->visitado : diccionario
+                    ----->Retorno: None
+        """
+        ruta.append(inicio) #se asigna a la ruta el nodo inicial
+        visitado.add(inicio) #se asigna a la la lista de nodos visitados el nodo inicial
+
+        if inicio == objetivo:  #Si inicio es igual a objetivo
+            return ruta #Retorna la ruta
+            
+        for(vecino, peso) in self.m_lista_adyacencia[inicio]: #Bucle que recorrera la lista de adyacencia
+            if vecino not in visitado:  #Si el vecino no se encuentra en el diccionario de nodos visitados
+                resultado = self.dfs(vecino, objetivo, ruta, visitado) #se asigna a la variable resultado el nodo vecino, el objetivo, la ruta y la lista de nodos visitados
+                
+                if resultado is not None: #Si la lista resultado no esta vacio
+                    return resultado #Retorna resultado
+                
+        ruta.pop() # elimina y retorna el elemento de la ruta
+        return None 
