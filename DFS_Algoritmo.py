@@ -126,8 +126,8 @@ if __name__ == "__main__":
     grafo2.Imprimir_lista_adyacencia() #Imprime la lista de adyacencia
 
     ruta_transversal2 = [] # Se inicializa la variable ruta_transversal
-    ruta_transversal2 = grafo2.dfs(0, 4) # Se almacena el recorrido dfs en la variable ruta_transversal
-    print(f"La ruta transversal desde el nodo 0 al nodo 4 es {ruta_transversal2}") #Imprime el recorriodo dfs
+    ruta_transversal2 = grafo2.dfs(0, 2) # Se almacena el recorrido dfs en la variable ruta_transversal
+    print(f"La ruta transversal desde el nodo 0 al nodo 2 es {ruta_transversal2}") #Imprime el recorriodo dfs
 
 
     print("Caso de Prueba 3")
@@ -144,4 +144,4 @@ if __name__ == "__main__":
 
     ruta_transversal3 = [] # Se inicializa la variable ruta_transversal
     ruta_transversal3 = grafo3.dfs(2, 3) # Se almacena el recorrido dfs en la variable ruta_transversal
-    print(f"La ruta transversal desde el nodo 0 al nodo 4 es {ruta_transversal3}") #Imprime el recorriodo dfs
+    print(f"La ruta transversal desde el nodo 2 al nodo 3 es {ruta_transversal3}") #Imprime el recorriodo dfs
